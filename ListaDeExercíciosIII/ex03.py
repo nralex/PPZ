@@ -6,11 +6,11 @@
 #########################################################################################################
 a = 80_000
 b = 200_000
-contador = 1
+contador = 0
 while True:
-    a *= 1.03
-    b *= 1.015
     contador += 1
+    a *= 1.03
+    b *= 1.015    
     if a >= b:
         print(f'São necessários {contador} anos para que a população do país A ultrapasse a população do país B')
         break

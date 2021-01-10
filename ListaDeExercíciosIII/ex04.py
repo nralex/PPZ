@@ -5,11 +5,8 @@
 # Fibonacci. F1 = 1, F2 = 1, F3 = 2, etc.                                                               #
 #########################################################################################################
 n = int(input('Quantos números deseja ver na sequencia de Fibonacci? '))
-n1 = 1
-n2 = 1
+n1 = n2 = 1
 print(n1, end=' ')
 for c in range(1, n):
     print(n2, end=' ')
-    n3 = n1 + n2
-    n1 = n2
-    n2 = n3
+    n1, n2 = n2, n1 + n2 # Atribuição múltipla
