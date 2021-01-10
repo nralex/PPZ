@@ -1,4 +1,4 @@
-#!/usr/bin/python -tt
+
 # Exercícios by Nick Parlante (CodingBat)
 
 # A. multstring
@@ -6,14 +6,17 @@
 # retorna uma string com n cópias da string original
 # multstring('Hi', 2) -> 'HiHi'
 def multstring(s, n):
-  return 
+  return s * n
 
 # B. string_splosion
 # string_splosion('Code') -> 'CCoCodCode'
 # string_splosion('abc') -> 'aababc'
 # string_splosion('ab') -> 'aab'
 def string_splosion(s):
-  return 
+  b = ''
+  for c in range(len(s)):
+    b += s[:c]
+  return b 
 
 # C. array_count9
 # conta quantas vezes aparece o 9 numa lista nums
