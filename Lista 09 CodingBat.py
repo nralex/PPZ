@@ -40,14 +40,24 @@ def common_end(a, b):
 # maior_ponta([1, 2, 3]) -> [3, 3, 3]
 # maior_ponta([1, 3, 2]) -> [2, 2, 2]
 def maior_ponta(nums):
-  return
+  if nums[0] > nums[-1]:
+    maior = nums[0]
+  else:
+    maior = nums[-1]
+  mp = []
+  for c in nums:
+    mp.append(maior)
+  return mp
 
 # E. sum2 #
 # Dada uma lista de inteiros de qualquer tamanho
 # retorna a soma dos dois primeiros elementos
 # se a lista tiver menos de dois elementos, soma o que for possível
 def sum2(nums):
-  return 
+  if len(nums) < 3:
+    return sum(nums)
+  else:
+    return nums[0] + nums[1]
 
 # F. middle_way #
 # sejam duas listas de inteiros a e b
@@ -57,7 +67,7 @@ def sum2(nums):
 # middle_way([7, 7, 7], [3, 8, 0]) -> [7, 8]
 # middle_way([5, 2, 9], [1, 4, 5]) -> [2, 4]
 def middle_way(a, b):
-  return 
+  return [a[int(len(a)/2)], b[int(len(b)/2)]]
 
 # G. date_fashion
 # você e sua namorada(o) vão a um restaurante
@@ -74,7 +84,13 @@ def middle_way(a, b):
 # date_fashion(5, 2) -> 0
 # date_fashion(5, 5) -> 1
 def date_fashion(eu, par):
-  return
+  if eu <= 2 or par <= 2:
+    n = 0
+  elif eu >= 8 or par >= 8:
+    n = 2
+  else:
+    n = 1
+  return n
 
 # H. squirrel_play
 # os esquilos na FATEC brincam quando a temperatura está entre 60 e 90
