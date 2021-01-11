@@ -1,4 +1,4 @@
-#!/usr/bin/python -tt
+
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -14,7 +14,7 @@
 # donuts(5) returns 'Número de donuts: 5'
 # donuts(23) returns 'Número de donuts: muitos'
 def donuts(n):
-  return
+    return 'Número de donuts: muitos' if n >= 10 else f'Número de donuts: {n}'
 
 # B. pontas
 # Dada uma string s, retorna uma string com as duas primeiras e as duas
@@ -22,7 +22,7 @@ def donuts(n):
 # Assim 'palmeiras' retorna 'paas'
 # No entanto, se a string tiver menos que 2 letras, retorna uma string vazia
 def pontas(s):
-  return 
+  return '' if len(s) < 2 else s[0:2] + s[-2:]
 
 # C. fixa_primeiro
 # Dada uma string s, retorna uma string onde todas as ocorrências
@@ -30,7 +30,13 @@ def pontas(s):
 # Assim 'abacate' retorna 'ab*c*te'
 # Dica: use s.replace(stra, strb) 
 def fixa_primeiro(s):
-  return 
+  b = [s[0]]
+  for c in range(1, len(s)):
+      if s[c] == s[0]:
+          b.append('*')
+      else:
+          b.append(s[c])
+  return ''.join(b)
 
 # D. mistura2
 # Sejam duas strings a e b
@@ -39,14 +45,15 @@ def fixa_primeiro(s):
 #   'mix', pod' -> 'pox mid'
 #   'dog', 'dinner' -> 'dig donner'
 def mistura2(a, b):
-  return
+  l = [b[:2] + a[2:], a[:2] + b[2:]]
+  return ' '.join(l)
 
 # E. palindrome
 # Verifique se uma string é palíndrome
 #   palindrome('asa') True
 #   palindrome('casa') False 
 def palindrome(s):
-  return
+  return s == s[::-1]
 
 # F. busca
 # Verifique quantas ocorrências de uma palavra há numa frase
@@ -54,7 +61,8 @@ def palindrome(s):
 # palavra = 'ana'
 # busca ('ana e mariana gostam de banana', 'ana') == 4
 def busca(frase, palavra):
-  return 
+  return len([k for k in range(len(frase))
+      if frase[k:k+len(palavra)] == palavra])
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
@@ -63,8 +71,7 @@ def test(obtido, esperado):
     prefixo = ' Parabéns!'
   else:
     prefixo = ' Ainda não'
-  print ('%s obtido: %s esperado: %s'
-         % (prefixo, repr(obtido), repr(esperado)))
+  print (f'{prefixo} obtido: {repr(obtido)} esperado: {repr(esperado)}')
 
 def main():
   print ('donuts')
