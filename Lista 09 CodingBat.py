@@ -1,4 +1,4 @@
-#!/usr/bin/python -tt
+
 # Exercícios by Nick Parlante (CodingBat)
 
 # A. first_last6
@@ -7,7 +7,7 @@
 # first_last6([6, 1, 2, 3]) -> True
 # first_last6([3, 2, 1]) -> False
 def first_last6(nums): #
-  return
+  return nums[0] == 6 or nums[-1] == 6
 
 # B. same_first_last #
 # retorna True se a lista nums
@@ -18,7 +18,10 @@ def first_last6(nums): #
 # same_first_last([1, 2, 3, 1]) -> True
 # same_first_last([1, 2, 1]) -> True
 def same_first_last(nums):
-  return 
+  if len(nums) >= 1:
+    return nums[0] == nums[-1]
+  else:
+    return False
 
 # C. common_end #
 # Dada duas listas a e b verifica se os dois primeiros são
@@ -28,7 +31,7 @@ def same_first_last(nums):
 # common_end([1, 2, 3], [7, 3, 2]) -> False
 # common_end([1, 2, 3], [1, 3]) -> True
 def common_end(a, b):
-  return 
+  return a[0] == b[0] or a[-1] == b[-1]
 
 # D. maior_ponta #
 # Dada uma lista não vazia, cria uma nova lista onde todos
