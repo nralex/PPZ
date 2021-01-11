@@ -13,15 +13,18 @@ def multstring(s, n):
 # string_splosion('abc') -> 'aababc'
 # string_splosion('ab') -> 'aab'
 def string_splosion(s):
-  b = ''
+  a = []
   for c in range(len(s)):
-    b += s[:c]
-  return b 
+    if c == 0:
+        a.append(s[0])
+    else:
+        a.append(s[0:c+1])
+  return ''.join(a)
 
 # C. array_count9
 # conta quantas vezes aparece o 9 numa lista nums
 def array_count9(nums):
-  return
+  return nums.count(9)
 
 # D. array_front9
 # verifica se pelo menos um dos quatro primeiros é nove
@@ -29,7 +32,19 @@ def array_count9(nums):
 # array_front9([1, 2, 3, 4, 9]) -> False
 # array_front9([1, 2, 3, 4, 5]) -> False
 def array_front9(nums):
-  return
+  cont = 0
+  if len(nums) < 4:
+    for c in range(len(nums)):
+        if nums[c] == 9:
+            cont += 1
+  else:
+    for c in range(4):
+        if nums[c] == 9:
+            cont += 1
+  if cont == 0:
+    return False
+  else:
+    return True
 
 # E. hello_name
 # seja uma string name
@@ -37,14 +52,14 @@ def array_front9(nums):
 # hello_name('Alice') -> 'Hello Alice!'
 # hello_name('X') -> 'Hello X!'
 def hello_name(name):
-  return
+  return f'Hello {name}!'
 
 # F. make_tags
 # make_tags('i', 'Yay'), '<i>Yay</i>'
 # make_tags('i', 'Hello'), '<i>Hello</i>'
 # make_tags('cite', 'Yay'), '<cite>Yay</cite>'
 def make_tags(tab, word):
-  return 
+  return f'<{tab}>{word}</{tab}>'
 
 # G. extra_end
 # seja um string s com no mínimo duas letras
@@ -53,7 +68,7 @@ def make_tags(tab, word):
 # extra_end('ab'), 'ababab'
 # extra_end('Hi'), 'HiHiHi'  
 def extra_end(s):
-  return 
+  return s[len(s) -2::] * 3
 
 # H. first_half
 # seja uma string s
