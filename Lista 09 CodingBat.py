@@ -101,7 +101,10 @@ def date_fashion(eu, par):
 # squirrel_play(95, False) -> False
 # squirrel_play(95, True) -> True
 def squirrel_play(temp, is_summer):
-  return
+  if is_summer:
+    return 60 <= temp <= 100
+  else:
+    return 60 <= temp <= 90
 
 # I. pego_correndo
 # você foi pego correndo
@@ -117,7 +120,21 @@ def squirrel_play(temp, is_summer):
 # pego_correndo(65, False) -> 1
 # pego_correndo(65, True) -> 0 
 def pego_correndo(speed, is_birthday):
-  return
+  if is_birthday:
+    if speed <= 65:
+      multa = 0
+    elif 60 < speed <= 85:
+      multa = 1
+    else:
+      multa = 2
+  else:
+    if speed <= 60:
+      multa = 0
+    elif 60 < speed <= 80:
+      multa = 1
+    else:
+      multa = 2
+  return multa
 
 # J. alarm_clock #
 # day: 0=domingo, 1=segunda, 2=terça, ..., 6=sábado
