@@ -149,7 +149,13 @@ def pego_correndo(speed, is_birthday):
 # alarm_clock(5, False) -> '7:00'
 # alarm_clock(0, False) -> '10:00'
 def alarm_clock(day, vacation):
-  return
+  d = ['10:00', '7:00', '7:00', '7:00', '7:00', '7:00', '10:00']
+  f = ['off', '10:00', '10:00', '10:00', '10:00', '10:00','off']
+  if vacation:
+    hora = f[day]
+  else:
+    hora = d[day]
+  return hora
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
