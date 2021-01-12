@@ -11,7 +11,12 @@
 # com tamanho >= 2 onde o primeiro e o último caracteres são iguais
 # Exemplo: ['aba', 'xyz', 'aa', 'x', 'bbb'] retorna 3
 def fim_igual(words):
-  return
+  c = 0
+  for p in words:
+    if len(p) >= 2:
+      if p[0] == p[-1]:
+        c += 1
+  return c
 
 # B. x_antes
 # Dada uma lista de strings retorna uma lista onde
