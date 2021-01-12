@@ -25,10 +25,17 @@ def fim_igual(words):
 # ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
 # Dica: monte duas listas separadas e junte-as no final
 def x_antes(words):
-  return 
+  cx = []
+  sx = []
+  for c in words:
+    if c[0] == 'x':
+        cx.append(c)
+    else:
+        sx.append(c)
+  return sorted(cx) + sorted(sx)
 
 def last(a): #esta def serve para a letra C
-  return 
+  return a[-1]
 
 # C. sort_last
 # Dada uma lista de tuplas não vazias retorna uma tupla ordenada
@@ -37,7 +44,7 @@ def last(a): #esta def serve para a letra C
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Dica: use key=função que você definiu e que retorna o último elemento
 def sort_last(tuples):
-  return 
+  return sorted(tuples, key=last)
 
 def test(obtido, esperado):
   if obtido == esperado:
