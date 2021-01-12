@@ -44,7 +44,9 @@ def last(a): #esta def serve para a letra C
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Dica: use key=função que você definiu e que retorna o último elemento
 def sort_last(tuples):
-  return sorted(tuples, key=last)
+  return sorted(tuples, key=last) # key=last chama a função acima do enunciado  key que especifica 
+                                  # uma função (ou outro chamável) a ser chamada para cada elemento da 
+                                  # lista antes de ser realizada a comparação.
 
 def test(obtido, esperado):
   if obtido == esperado:
